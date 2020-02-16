@@ -149,7 +149,7 @@ for length in range(1, 25 +1):
 
 # Creating placehoders for the inputs and the targets
 def model_inputs():
-    inputs = tf.placeholder(tf.int32, [None, None], name = 'intputt')
+    inputs = tf.placeholder(tf.int32, [None, None], name = 'intput')
     targets = tf.placeholder(tf.int32, [None, None], name = 'targe')
     lr = tf.placeholder(tf.float32, name = 'learning_rate')
     keep_prob = tf.placeholder(tf.float32, name = 'keep_prob')
