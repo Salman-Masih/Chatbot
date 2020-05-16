@@ -275,7 +275,33 @@ def seq2seq(inputs, targets, keep_prob, batch_size, sequence_length, answers_num
                                                          batch_size)
 
 
+# Training Part
+# Setting the Hyperparaamters
 
+epochs = 100
+batch_size = 64
+rnn_layers = 3
+encoding_embedding_size = 512
+decoding_embedding_size = 512
+learning_rate_decay = 0.9
+min_learning_rate = 0.0001
+keep_probability = 0.5  
+
+# defining a session
+
+tf.reset_default_graph()
+session = tf.InteractiveSession()
+
+# Loading the model inputs
+inputs, targets, lr, keep_prob = model_inputs()
+
+# Setting the sequence lenhth
+
+sequence_length = tf.placeholder_with_default(25, None, name = 'sequence_length')
+
+# Getting the shape of the inputs tensor
+
+input_shape = tf.shape(inputs)
 
 
 
